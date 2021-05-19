@@ -1,5 +1,6 @@
-# Final Project of <a href="https://www.linkedin.com/in/brunougolini/" target="_blank">Bruno Ugolini</a> for the <a href="https://concordiabootcamps.ca/courses/data-science-remote/" target="_blank">Data Science Diploma</a>
-![Main GUI](./Images/Main_GUI.png)
+# Final Project of [Bruno Ugolini](https://www.linkedin.com/in/brunougolini/) for the [Data Science Diploma](https://concordiabootcamps.ca/courses/data-science-remote/)
+| ![Main GUI](./Images/Main_GUI.png) |
+| ------ |
 ## **Summary**
 ### This project was inspired by [this paper](https://arxiv.org/abs/1707.00652) wherein a methodology is developed for applying user inputs as corrections to the segmentation of medical imaging. Why go through such an arduous task when deep neural nets exist for image segmentation? Because medical images (X-rays, scans, etc.) are often grayscale with very low contrast between features. Medical practitioners need to identify features within these images to a high confidence level. Ultimately, the objective is to divide an image into foreground (FG) object and background (BG). The image dataset used was of blood cells infected with the malaria parasite.
 
@@ -10,10 +11,9 @@
 ## **1. Probability Mapping**
 
 ### The reference paper framework assumes the existence of a trained neural net. However, since I was starting from scratch, I first developed a simple mapping of each pixel belonging to either FG or BG based on user scribbles (with adjustable pen width) of these regions. The probability of a pixel belonging to FG is based on the RGB components compared to the KDE of the foreground pixels. The histogram of the total image, FG and BG pixels are all displayed on the GUI and the bandwidth of the KDE can be adjusted by the user.
-
 <p align="center">
-  <img src="./Images/FG_BG_Histograms.png" height="550" title="hover text">
-  <img src="./Images/Prob_MinCut.png" height="550" title="hover text">
+    <img src="./Images/FG_BG_Histograms.png" height="550" title="hover text">
+    <img src="./Images/Prob_MinCut.png" height="550" title="hover text">
 </p>
 
 ## **2. Graph Theory and Maximum-Flow / Minimum-Cut**
@@ -57,9 +57,12 @@
 
 ### While this implementation was conducted, the core of the effort went into researching the methods, applying and modifying them as needed and finally, getting the code to run efficiently (sparse representation of graphs, joblib, etc.).
 
-## **5. Epilogue**
+## **5. What I Learned**
 ### So much of Data Science boils down to graph theory with its applications and methods.
 ### Training a NN with a small dataset provides quite the random output.
 ### Tkinter does not port to a website (learned all too late sadly).
+
+## **6. Summary**
+### This project exemplifies the type of work that I enjoy doing and have done for many years in the aerospace field: research, learning, adapting, building the necessary tools, testing and deploying the product.
 
 
