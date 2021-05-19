@@ -1,4 +1,4 @@
-# Final Project of [Bruno Ugolini](https://www.linkedin.com/in/brunougolini/) for the [Data Science Diploma](https://concordiabootcamps.ca/courses/data-science-remote/)
+# Final Project of [Bruno Ugolini](https://www.linkedin.com/in/brunougolini/) for the [Data Science Diploma](https://concordiabootcamps.ca/courses/data-science-remote/). (See ![the video!](./Images/Segmentation_Video.mp4)).
 | ![Main GUI](./Images/Main_GUI.png) |
 | ------ |
 # **Summary**
