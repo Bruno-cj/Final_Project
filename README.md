@@ -1,4 +1,4 @@
-# Final Project of [Bruno Ugolini](https://www.linkedin.com/in/brunougolini/) for the [Data Science Diploma](https://concordiabootcamps.ca/courses/data-science-remote/)
+# Final Project of <a href="https://www.linkedin.com/in/brunougolini/" target="_blank">Bruno Ugolini</a> for the <a href="https://concordiabootcamps.ca/courses/data-science-remote/" target="_blank">Data Science Diploma</a>
 ![Main GUI](./Images/Main_GUI.png)
 ## **Summary**
 ### This project was inspired by [this paper](https://arxiv.org/abs/1707.00652) wherein a methodology is developed for applying user inputs as corrections to the segmentation of medical imaging. Why go through such an arduous task when deep neural nets exist for image segmentation? Because medical images (X-rays, scans, etc.) are often grayscale with very low contrast between features. Medical practitioners need to identify features within these images to a high confidence level. Ultimately, the objective is to divide an image into foreground (FG) object and background (BG). The image dataset used was of blood cells infected with the malaria parasite.
