@@ -1,10 +1,10 @@
 # Final Project of [Bruno Ugolini](https://www.linkedin.com/in/brunougolini/) for the [Data Science Diploma](https://concordiabootcamps.ca/courses/data-science-remote/)
 | ![Main GUI](./Images/Main_GUI.png) |
 | ------ |
-## **Summary**
+# **Summary**
 ### This project was inspired by [this paper](https://arxiv.org/abs/1707.00652) wherein a methodology is developed for applying user inputs as corrections to the segmentation of medical imaging. Why go through such an arduous task when deep neural nets exist for image segmentation? Because medical images (X-rays, scans, etc.) are often grayscale with very low contrast between features. Medical practitioners need to identify features within these images to a high confidence level. Ultimately, the objective is to divide an image into foreground (FG) object and background (BG). The image dataset used was of blood cells infected with the malaria parasite.
 
-## **Objective**
+# **Objective**
 ### The objective for this project was not to reproduce the reference work as such but to develop a similar scheme in order to gain insight into this field as well as a deeper knowledge of neural nets and graph theory (and to a lesser extent, GUI programming).
 
 # Walkthrough of the Method
@@ -55,14 +55,17 @@
 ## **4. Implementation**
 ### A small set of images are processed by probability and min-cut mappings in order to define adequate target segmentations. These X and y arrays are then used to train 3-Net. A wider number of images is now processed and the 3-Net segmentation is corrected yielding the additional three channels (initial target + FG/BG geodesic maps) to be consumed in training by 6-Net. 3-Net is re-trained and 6-Net is trained for use in the GUI. Repeat.
 
-### While this implementation was conducted, the core of the effort went into researching the methods, applying and modifying them as needed and finally, getting the code to run efficiently (sparse representation of graphs, joblib, etc.).
+## **5. References**
+### [DeepIGeoS: A Deep Interactive Geodesic Framework for Medical Image Segmentation](https://arxiv.org/abs/1707.00652)
+### [Interactive Graph Cuts for Optimal Boundary & Region Segmentation of Objects in N-D Images](https://www.csd.uwo.ca/~yboykov/Papers/iccv01.pdf)
+### [An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization in Vision](https://www.csd.uwo.ca/~yboykov/Papers/pami04.pdf)
 
-## **5. What I Learned**
-### So much of Data Science boils down to graph theory with its applications and methods.
+# **What I Learned**
+### While this implementation was conducted, the core of the effort went into researching the methods, applying and modifying them as needed and finally, getting the code to run efficiently (sparse representation of graphs, joblib, etc.).### So much of Data Science boils down to graph theory with its applications and methods.
 ### Training a NN with a small dataset provides quite the random output.
 ### Tkinter does not port to a website (learned all too late sadly).
 
-## **6. Summary**
-### This project exemplifies the type of work that I enjoy doing and have done for many years in the aerospace field: research, learning, adapting, building the necessary tools, testing and deploying the product.
+# **Conclusion**
+### This project exemplifies the type of work that I enjoy doing and have done for many years in the aerospace field: researching, learning, adapting, building the necessary tools, testing and deploying the product.
 
 
