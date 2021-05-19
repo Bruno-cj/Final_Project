@@ -32,7 +32,12 @@
 ## **3.1 Three-Channel Neural Network (3-Net)**
 ### A neural network (NN) was devised by the authors of the original paper and a watered-down version was implemented here (omitting the trainable Conditional Random Field (CRF) prior to output). This NN is based on VGG-16 but was modified in several ways by the authors. First, since the objective here is image segmentation rather than image classification, the NN has to be resolution-preserving. Therefore, all max-pooling and downsampling is eliminated since this would lead to a change of resolution in the channels. In their stead, [dilated convolution](https://towardsdatascience.com/understanding-2d-dilated-convolution-operation-with-examples-in-numpy-and-tensorflow-with-d376b3972b25) is the mechanism by which the receptive field of image features is harnessed. Another difference to VGG-16 is the addition of a concatenation layer that merges the output of the five convolutional blocks.
 ![Three-Channel NN](./Images/P_Net.png)
+
 ### Apart from the omission of the CRF, the NN presented in the source paper was implemented as is and training was conducted as the collection of segmented image/target pairs were generated. The GUI presents the segmentation resulting from this 3-Net. The 3 channels refers to the RGB channels of the original image.
+
+<p align="center">
+  <img src="./Images/NNets.png" width="614" title="hover text">
+</p>
 
 ## **3.2 Six-Channel Neural Network (6-Net)**
 ### The authors devised a novel way to implement the user scribbles that correct the segmentation as inputs into a six-channel NN. I implemented this same NN while omitting once again the penultimate CRF. This NN is identical to that described above but with an additional three "color" channels. These three are: an initial target segmentation and two geodesic mappings of the FG and BG corrections. The former comes from the three-channel net but I opted to also allow the use of the probability mapping or min-cut mapping as well. This is justified since my 3-Net is not mature and was constantly being re-trained from scratch. The goal was to achieve a good target segmentation for each image.
@@ -50,9 +55,11 @@
 ## **4. Implementation**
 ### A small set of images are processed by probability and min-cut mappings in order to define adequate target segmentations. These X and y arrays are then used to train 3-Net. A wider number of images is now processed and the 3-Net segmentation is corrected yielding the additional three channels (initial target + FG/BG geodesic maps) to be consumed in training by 6-Net. 3-Net is re-trained and 6-Net is trained for use in the GUI. Repeat.
 
-## **5. What I Learned**
-### So much of Data Science boils down to graph theory and its applications and methods.
-### Training a NN with a small dataset provides quite a random output.
+### While this implementation was conducted, the core of the effort went into researching the methods, applying and modifying them as needed and finally, getting the code to run efficiently (sparse representation of graphs, joblib, etc.).
+
+## **5. Epilogue**
+### So much of Data Science boils down to graph theory with its applications and methods.
+### Training a NN with a small dataset provides quite the random output.
 ### Tkinter does not port to a website (learned all too late sadly).
 
 
