@@ -20,8 +20,8 @@
 ### In order to further refine the segmentation, [interactive graph cuts](https://www.csd.uwo.ca/~yboykov/Papers/iccv01.pdf) are used. The methodology I applied follows exactly the reference paper cited. That is, the image is represented as a graph with each pixel being a node on the graph. These pixel-nodes have attributes such as R, G, B and equivalent grayscale intensity. As well, each pixel-node could be identified as belonging to (in a strict manner) either FG or BG based on user scribbles. The edges betweeen nodes could be weighted by various means such as absolute change in intensity between neighbors, change in FG probabilty, etc.
 
 <p align="center">
-  <img src="./Images/MaxFlow.png" width="350" title="hover text">
-  <img src="./Images/GraphEdges.png" width="350" title="hover text">
+  <img src="./Images/MaxFlow.png" height="490" title="hover text">
+  <img src="./Images/GraphCutEquations.png" height="490" title="hover text">
 </p>
 
 ### Two additional terminal nodes are introduced: S, the source node and T, the sink node. Imagine a flow of water initiating from the S node that flows into the nodes of the images and then drains into the sink node T on the other side of the image. The amount of flow permitted between two nodes is determined by the edge weight which reflects a combination of a boundary and region attribute. The theory states that the maximum flow is achieved when the graph cut segmenting the nodes (pixels) into reachable (FG) and unreachable (BG) pixels is minimized. Basically, the nodes are segmented into either a strong connection to the sink or source. This theory is applied in my work and the results displayed interactively. The lambda factor that gives priority to either region or boundary conditions for the graph cut can be modified in the GUI by the user.
