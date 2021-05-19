@@ -7,3 +7,7 @@
 ## X directory: stores the input images for both of the neural nets.
 
 ## y directory: stores the target images for both of the neural nets.
+
+## Model_003 directory: the full Net-3 model definition (version 3)
+
+## Net6_003: the full Net-6 model definition (version 3)
