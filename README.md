@@ -28,7 +28,12 @@
 
 ### The geodesic mappings are generated from the corrections to the segmentation made by the user. The user makes a scribble to include a FG element tagged by 3-Net as BG. The minimum geodesic distance from any given pixel to the FG scribble is found and assigned as its "color". This produces a grayscale image where the points closest in geodesic distance to the scribble are black and those farther are paler. The geodesic distance is the distance as determined by a particular edge weight. In this case, the absolute difference in pixel intensity between neighbors. The use of geodesic distance rather than euclidian distance favors clustering of pixels with a common intensity even though they may be physically distant.
 
-## 4. Implementation
+## **4. Implementation**
+### A small set of images are processed by probability and min-cut mappings in order to define adequate target segmentations. These X and y arrays are then used to train 3-Net. A wider number of images is now processed and the 3-Net segmentation is corrected yielding the additional three channels (initial target + FG/BG geodesic maps) to be consumed in training by 6-Net. 3-Net is re-trained and 6-Net is trained for use in the GUI. Repeat.
 
+## **5. What I Learned**
+### So much of Data Science boils down to graph theory and its applications and methods.
+### Training a NN with a small dataset provides quite a random output.
+### Tkinter does not port to a website (learned all too late sadly).
 
 
