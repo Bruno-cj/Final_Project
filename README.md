@@ -26,7 +26,9 @@
 ## **3.2 Six-Channel Network (6-Net)**
 ### The authors devised a novel way to implement the user scribbles that correct the segmentation as inputs into a six-channel NN. I implemented this same NN while omitting once again the penultimate CRF. This NN is identical to that described above but with an additional three "color" channels. These three are: an initial target segmentation and two geodesic mappings of the FG and BG corrections. The former comes from the three-channel net but I opted to also allow the use of the probability mapping or min-cut mapping as well. This is justified since my 3-Net is not mature and was constantly being re-trained from scratch. The goal was to achieve a good target segmentation for each image.
 
-### The geodesic mappings are generated from the corrections to the segmentation made by the user. The user makes a scribble to include a foreground element omitted by 3-Net.
+### The geodesic mappings are generated from the corrections to the segmentation made by the user. The user makes a scribble to include a FG element tagged by 3-Net as BG. The minimum geodesic distance from any given pixel to the FG scribble is found and assigned as its "color". This produces a grayscale image where the points closest in geodesic distance to the scribble are black and those farther are paler. The geodesic distance is the distance as determined by a particular edge weight. In this case, the absolute difference in pixel intensity between neighbors. The use of geodesic distance rather than euclidian distance favors clustering of pixels with a common intensity even though they may be physically distant.
+
+## 4. Implementation
 
 
 
